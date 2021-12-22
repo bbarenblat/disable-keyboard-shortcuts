@@ -1,4 +1,4 @@
-# Copyright 2019 Google LLC
+#!/bin/sh
 # Copyright 2021 Benjamin Barenblat
 #
 # Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -13,16 +13,7 @@
 # License for the specific language governing permissions and limitations under
 # the License.
 
-NAME = disable_keyboard_shortcuts
+set -eu
 
-$(NAME).zip: background.js manifest.json icon128.png icon48.png
-	mkdir $(NAME)
-	uglifyjs background.js -m -o $(NAME)/background.js
-	jq -Sc . manifest.json >$(NAME)/manifest.json
-	cp -al icon128.png icon48.png $(NAME)
-	zip -9r $(NAME) $(NAME)
-	$(RM) -r $(NAME)
-
-.PHONY: clean
-clean:
-	$(RM) -r $(NAME).zip $(NAME)
+cp "$1" "$2"
+optipng -o7 "$2"

@@ -1,0 +1,39 @@
+# Copyright 2021 Benjamin Barenblat
+#
+# Licensed under the Apache License, Version 2.0 (the "License"); you may not
+# use this file except in compliance with the License. You may obtain a copy of
+# the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations under
+# the License.
+
+name = disable_keyboard_shortcuts
+
+rule generate_png
+  command = gen/png $in $out 2>/dev/null
+  description = Generating $out
+
+rule minify_js
+  command = uglifyjs $in -m -o $out
+  description = Minifying $in
+
+rule minify_json
+  command = jq -Sc . $in >$out
+  description = Minifying $in
+
+rule zip
+  command = zip -qr $out $in
+  description = Zipping $out
+
+build $name/background.js: minify_js background.js
+build $name/manifest.json: minify_json manifest.json
+build $name/icon128.png: generate_png icon128.png
+build $name/icon48.png: generate_png icon128.png
+
+build $name.zip: zip $name/background.js $name/manifest.json $name/icon128.png $
+    $name/icon48.png
