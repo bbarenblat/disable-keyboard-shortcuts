@@ -22,7 +22,27 @@
     "do-nothing6": { "description": "Do nothing" },
     "do-nothing7": { "description": "Do nothing" },
     "do-nothing8": { "description": "Do nothing" },
-    "do-nothing9": { "description": "Do nothing" }
+    "do-nothing9": { "description": "Do nothing" },
+    "do-nothinga": { "description": "Do nothing" },
+    "do-nothingb": { "description": "Do nothing" },
+    "do-nothingc": { "description": "Do nothing" },
+    "do-nothingd": { "description": "Do nothing" },
+    "do-nothinge": { "description": "Do nothing" },
+    "do-nothingf": { "description": "Do nothing" },
+    "do-nothingg": { "description": "Do nothing" },
+    "do-nothingh": { "description": "Do nothing" },
+    "do-nothingi": { "description": "Do nothing" },
+    "do-nothingj": { "description": "Do nothing" },
+    "do-nothingk": { "description": "Do nothing" },
+    "do-nothingl": { "description": "Do nothing" },
+    "do-nothingm": { "description": "Do nothing" },
+    "do-nothingn": { "description": "Do nothing" },
+    "do-nothingo": { "description": "Do nothing" },
+    "do-nothingp": { "description": "Do nothing" },
+    "do-nothingq": { "description": "Do nothing" },
+    "do-nothingr": { "description": "Do nothing" },
+    "do-nothings": { "description": "Do nothing" },
+    "do-nothingt": { "description": "Do nothing" }
   },
   "minimum_chrome_version": "33"
 }
