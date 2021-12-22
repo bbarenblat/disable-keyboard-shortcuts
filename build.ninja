@@ -15,7 +15,7 @@
 name = disable_keyboard_shortcuts
 
 rule generate_png
-  command = gen/png $in $out 2>/dev/null
+  command = gen/png $in $width $out 2>/dev/null
   description = Generating $out
 
 rule minify_js
@@ -32,8 +32,10 @@ rule zip
 
 build $name/background.js: minify_js background.js
 build $name/manifest.json: minify_json manifest.json
-build $name/icon128.png: generate_png icon128.png
-build $name/icon48.png: generate_png icon128.png
+build $name/icon128.png: generate_png icon.svg
+  width = 128
+build $name/icon48.png: generate_png icon.svg
+  width = 48
 
 build $name.zip: zip $name/background.js $name/manifest.json $name/icon128.png $
     $name/icon48.png

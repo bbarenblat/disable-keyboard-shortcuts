@@ -15,5 +15,5 @@
 
 set -eu
 
-cp "$1" "$2"
-optipng -o7 "$2"
+inkscape -w "$2" -h "$2" -o "$3" "$1"
+optipng -o7 "$3"
